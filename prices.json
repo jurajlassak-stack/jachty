@@ -1,15 +1,14 @@
 {
   "updated": "2026-07-17",
   "boats": {
-    "jeanneau-sun-odyssey-44i-gea": {"name": "Jeanneau Sun Odyssey 44i — Gea", "marina": "Sukošan, D-Marin Dalmacija", "year": 2009, "price": 1768, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "elan-434-impression-jordan": {"name": "Elan 434 Impression — Jordan", "marina": "Biograd na Moru, Marina Kornati", "year": 2009, "price": 1848, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "elan-444-karlo-veliki-1": {"name": "Elan 444 — Karlo Veliki", "marina": "Pirovac, Marina Pirovac", "year": 2012, "price": 2000, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "bavaria-cruiser-46-lula": {"name": "Bavaria Cruiser 46 — Lula", "marina": "Primošten, Marina Kremik", "year": 2016, "price": 2172, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "beneteau-oceanis-45-theia": {"name": "Beneteau Oceanis 45 — Theia", "marina": "Šibenik, D-Marin Mandalina", "year": 2016, "price": 2450, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "salona-44-calanthe": {"name": "Salona 44 — Calanthe", "marina": "Kaštela, Marina Kaštela", "year": 2013, "price": 2456, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "beneteau-oceanis-clipper-411-m-m": {"name": "Beneteau Oceanis Clipper 411 — M&M", "marina": "Split, Pier Mimice", "year": 2001, "price": 2512, "since": "2026-07-17", "firstSeen": "2026-07-17"},
-    "beneteau-oceanis-401-enjoy": {"name": "Beneteau Oceanis 40.1 — Enjoy", "marina": "Trogir, Marina Baotić", "year": 2022, "price": 2749, "since": "2026-07-16", "firstSeen": "2026-07-16"},
-    "elan-45-impression-aurora": {"name": "Elan 45 Impression — Aurora", "marina": "Pirovac, Marina Pirovac", "year": 2024, "price": 2837, "since": "2026-07-16", "firstSeen": "2026-07-16"},
-    "jeanneau-sun-odyssey-440-uccelli": {"name": "Jeanneau Sun Odyssey 440 — Uccelli", "marina": "Trogir, ACI Marina Trogir", "year": 2022, "price": 2838, "since": "2026-07-16", "firstSeen": "2026-07-16"}
+    "jeanneau-sun-odyssey-44i-gea": {"name": "Jeanneau Sun Odyssey 44i — Gea", "marina": "Sukošan, D-Marin Dalmacija", "year": 2009, "price": 1768, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 175, "transitLog": 250, "touristTaxPerPersonDay": 1.30}},
+    "elan-434-impression-jordan": {"name": "Elan 434 Impression — Jordan", "marina": "Biograd na Moru, Marina Kornati", "year": 2009, "price": 1848, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 200, "transitLog": 280, "touristTaxPerPersonDay": 1.40}},
+    "elan-444-karlo-veliki-1": {"name": "Elan 444 — Karlo Veliki", "marina": "Pirovac, Marina Pirovac", "year": 2012, "price": 2000, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 135, "transitLog": 350, "touristTaxPerPersonDay": 1.40}},
+    "bavaria-cruiser-46-lula": {"name": "Bavaria Cruiser 46 — Lula", "marina": "Primošten, Marina Kremik", "year": 2016, "price": 2172, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 175, "transitLog": 350, "touristTaxPerPersonDay": 1.40}},
+    "beneteau-oceanis-45-theia": {"name": "Beneteau Oceanis 45 — Theia", "marina": "Šibenik, D-Marin Mandalina", "year": 2016, "price": 2450, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 175, "transitLog": 280, "touristTaxPerPersonDay": 1.50}},
+    "beneteau-oceanis-clipper-411-m-m": {"name": "Beneteau Oceanis Clipper 411 — M&M", "marina": "Split, Pier Mimice", "year": 2001, "price": 2512, "since": "2026-07-17", "firstSeen": "2026-07-17", "fees": {"depositInsurance": 135, "transitLog": 300, "touristTaxPerPersonDay": 1.40}},
+    "beneteau-oceanis-401-enjoy": {"name": "Beneteau Oceanis 40.1 — Enjoy", "marina": "Trogir, Marina Baotić", "year": 2022, "price": 2749, "since": "2026-07-16", "firstSeen": "2026-07-16", "fees": {"depositInsurance": 320, "transitLog": 285, "touristTaxPerPersonDay": 1.33}},
+    "elan-45-impression-aurora": {"name": "Elan 45 Impression — Aurora", "marina": "Pirovac, Marina Pirovac", "year": 2024, "price": 2837, "since": "2026-07-16", "firstSeen": "2026-07-16", "fees": {"depositInsurance": 215, "transitLog": 270, "touristTaxPerPersonDay": 1.40}},
+    "jeanneau-sun-odyssey-440-uccelli": {"name": "Jeanneau Sun Odyssey 440 — Uccelli", "marina": "Trogir, ACI Marina Trogir", "year": 2022, "price": 2838, "since": "2026-07-16", "firstSeen": "2026-07-16", "fees": {"depositInsurance": 400, "transitLog": 360, "touristTaxPerPersonDay": 1.40}}
   }
 }
