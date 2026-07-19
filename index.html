@@ -17,6 +17,9 @@
   .dates { font-size:.95rem; opacity:.9; margin-bottom:10px; }
   .filters { font-size:.75rem; opacity:.8; line-height:1.4; }
   .updated { font-size:.95rem; font-weight:600; margin-top:12px; background:rgba(255,255,255,.14); border-radius:10px; display:inline-block; padding:5px 16px; }
+  .sorter { margin-top:12px; font-size:.85rem; }
+  .sorter select { background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.4); border-radius:8px; padding:5px 10px; font-size:.85rem; font-weight:600; margin-left:6px; -webkit-appearance:none; appearance:none; cursor:pointer; }
+  .sorter select option { color:#1a2a36; }
 
   .card { background:#fff; border-radius:12px; padding:14px 16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,.08); display:block; text-decoration:none; color:inherit; }
   .card:active { background:#eef5fb; }
@@ -41,6 +44,12 @@
   .trend .year { margin-left:auto; background:transparent !important; padding:0; font-weight:700; color:#1a2a36; }
   .trend .year-mid { color:var(--blue); }
   .trend .year-new { color:#e07b00; }
+  .trend .chev { background:#eef2f5 !important; color:#5a6b78 !important; padding:2px 10px; border-radius:10px; cursor:pointer; font-weight:700; margin-left:6px; user-select:none; }
+
+  .fees { display:none; margin-top:10px; border-top:1px dashed #dbe4ec; padding-top:8px; font-size:.78rem; color:#3d4f5c; }
+  .fees.open { display:block; }
+  .fees div { display:flex; justify-content:space-between; padding:1.5px 0; gap:10px; }
+  .fees .sum { font-weight:700; border-top:1px solid #dbe4ec; margin-top:4px; padding-top:5px; color:#1a2a36; }
 
   .sold { opacity:.55; }
   .sold .name { text-decoration:line-through; color:#5a6b78; }
@@ -57,57 +66,156 @@
     <div class="dates">1. — 8. august 2026 · Zadar → Trogir</div>
     <div class="filters">4 kabíny · GPS v kokpite · inverter · thruster · poistenie kaucie · iba voľné · do 3 000 €</div>
     <div class="updated">🔄 aktualizované 19. 07. 2026 · 13:11</div>
+    <div class="sorter">Zoradiť podľa:<select id="sort">
+      <option value="price">ceny prenájmu</option>
+      <option value="pp">ceny na osobu</option>
+      <option value="year">ročníka (najnovšie)</option>
+    </select></div>
   </header>
 
-  <a class="card deal" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-44i-gea?checkIn=2026-08-01&checkOut=2026-08-08">
+  <div id="list">
+
+  <a class="card deal" data-price="1768" data-pp="1058.65" data-year="2009" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-44i-gea?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Jeanneau Sun Odyssey 44i — Gea<span class="badge">pod 2000 €</span></span><span class="marina">Sukošan, D-Marin Dalmacija</span></span><span class="pricebox"><span class="price">1 768 €</span><span class="total">celkovo 4 235 €<br>na osobu <b>1 059 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní, po zľave −45 %)</span><span>1 768 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>175 €</span></div>
+      <div><span>Transit log (záverečné upratovanie)</span><span>250 €</span></div>
+      <div><span>Turistická taxa 1,30 € × 4 os. × 8 dní</span><span>41,60 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>4 235 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 059 €</span></div>
+    </div>
   </a>
 
-  <a class="card deal" href="https://www.boataround.com/boat/elan-434-impression-jordan?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card deal" data-price="1848" data-pp="1093.20" data-year="2009" href="https://www.boataround.com/boat/elan-434-impression-jordan?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 434 Impression — Jordan<span class="badge">pod 2000 €</span></span><span class="marina">Biograd na Moru, Marina Kornati</span></span><span class="pricebox"><span class="price">1 848 €</span><span class="total">celkovo 4 373 €<br>na osobu <b>1 093 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní, po zľave −40 %)</span><span>1 848 €</span></div>
+      <div><span>Poistenie kaucie (kaucia znížená na 250 €)</span><span>200 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>280 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>4 373 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 093 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/elan-444-karlo-veliki-1?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2000" data-pp="1132.45" data-year="2012" href="https://www.boataround.com/boat/elan-444-karlo-veliki-1?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 444 — Karlo Veliki</span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="price">2 000 €</span><span class="total">celkovo 4 530 €<br>na osobu <b>1 132 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2012</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2012</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 000 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>135 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>350 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>4 530 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 132 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/bavaria-cruiser-46-lula?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2172" data-pp="1185.45" data-year="2016" href="https://www.boataround.com/boat/bavaria-cruiser-46-lula?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Bavaria Cruiser 46 — Lula</span><span class="marina">Primošten, Marina Kremik</span></span><span class="pricebox"><span class="price">2 172 €</span><span class="total">celkovo 4 742 €<br>na osobu <b>1 185 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year year-mid">rok 2016</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year year-mid">rok 2016</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 172 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>175 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>350 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>4 742 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 185 €</span></div>
+    </div>
   </a>
 
-  <a class="card sold" href="https://www.boataround.com/boat/beneteau-oceanis-45-theia?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card sold" data-price="2450" data-pp="1229.15" data-year="2016" href="https://www.boataround.com/boat/beneteau-oceanis-45-theia?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 45 — Theia</span><span class="marina">Šibenik, D-Marin Mandalina</span></span><span class="pricebox"><span class="price">2 450 €</span><span class="total">celkovo ~4 917 €<br>na osobu <b>~1 229 €</b></span></span></div>
-    <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 19. 7.</span><span class="year year-mid">rok 2016</span></div>
+    <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 19. 7.</span><span class="year year-mid">rok 2016</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní, posledná známa cena)</span><span>2 450 €</span></div>
+      <div><span>Poistenie kaucie (odhad)</span><span>~175 €</span></div>
+      <div><span>Transit log (odhad)</span><span>~250 €</span></div>
+      <div><span>Turistická taxa ~1,30 € × 4 os. × 8 dní</span><span>~41,60 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>~4 917 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>~1 229 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2512" data-pp="1247.95" data-year="2001" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis Clipper 411 — M&amp;M</span><span class="marina">Split, Pier Mimice</span></span><span class="pricebox"><span class="price">2 512 €</span><span class="total">celkovo 4 992 €<br>na osobu <b>1 248 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2001</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2001</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 512 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>135 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>300 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>4 992 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 248 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-440-uccelli?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2635" data-pp="1359.95" data-year="2022" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-440-uccelli?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Jeanneau Sun Odyssey 440 — Uccelli</span><span class="marina">Trogir, ACI Marina Trogir</span></span><span class="pricebox"><span class="price">2 635 €</span><span class="total">celkovo 5 440 €<br>na osobu <b>1 360 €</b></span></span></div>
-    <div class="trend t-down"><span>▼ −203 €</span><span class="since">od 19. 7.</span><span class="year year-mid">rok 2022</span></div>
+    <div class="trend t-down"><span>▼ −203 €</span><span class="since">od 19. 7.</span><span class="year year-mid">rok 2022</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 635 €</span></div>
+      <div><span>Poistenie kaucie (kaucia znížená na 800 €)</span><span>400 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>360 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>5 440 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 360 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/beneteau-oceanis-401-enjoy?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2749" data-pp="1349.14" data-year="2022" href="https://www.boataround.com/boat/beneteau-oceanis-401-enjoy?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 40.1 — Enjoy</span><span class="marina">Trogir, Marina Baotić</span></span><span class="pricebox"><span class="price">2 749 €</span><span class="total">celkovo 5 397 €<br>na osobu <b>1 349 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 16. 7.</span><span class="year year-mid">rok 2022</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 16. 7.</span><span class="year year-mid">rok 2022</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 749 €</span></div>
+      <div><span>Poistenie kaucie 40 €/deň × 8 (kaucia znížená na 600 €)</span><span>320 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>285 €</span></div>
+      <div><span>Turistická taxa 1,33 € × 4 os. × 8 dní</span><span>42,56 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>5 397 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 349 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/elan-45-impression-aurora?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2837" data-pp="1341.70" data-year="2024" href="https://www.boataround.com/boat/elan-45-impression-aurora?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 45 Impression — Aurora<span class="badge badge-new">rok 2024</span></span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="price">2 837 €</span><span class="total">celkovo 5 367 €<br>na osobu <b>1 342 €</b></span></span></div>
-    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 16. 7.</span><span class="year year-new">rok 2024</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 16. 7.</span><span class="year year-new">rok 2024</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 837 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>215 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>270 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>5 367 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 342 €</span></div>
+    </div>
   </a>
 
-  <a class="card" href="https://www.boataround.com/boat/bavaria-cruiser-46-sunset-breeze?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2970" data-pp="1384.95" data-year="2023" href="https://www.boataround.com/boat/bavaria-cruiser-46-sunset-breeze?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Bavaria Cruiser 46 — Sunset Breeze<span class="badge badge-new">rok 2023</span></span><span class="marina">Split, ACI Marina Split</span></span><span class="pricebox"><span class="price">2 970 €</span><span class="total">celkovo 5 540 €<br>na osobu <b>1 385 €</b></span></span></div>
-    <div class="trend t-new"><span>🆕 nová v zozname</span><span class="since">od 19. 7.</span><span class="year year-new">rok 2023</span></div>
+    <div class="trend t-new"><span>🆕 nová v zozname</span><span class="since">od 19. 7.</span><span class="year year-new">rok 2023</span><span class="chev">▾</span></div>
+    <div class="fees">
+      <div><span>Prenájom (8 dní)</span><span>2 970 €</span></div>
+      <div><span>Poistenie kaucie (deposit insurance)</span><span>175 €</span></div>
+      <div><span>Transit log (upratovanie a posteľná bielizeň)</span><span>350 €</span></div>
+      <div><span>Turistická taxa 1,40 € × 4 os. × 8 dní</span><span>44,80 €</span></div>
+      <div><span>Strava a doprava 500 € × 4 os.</span><span>2 000 €</span></div>
+      <div class="sum"><span>Celkovo</span><span>5 540 €</span></div>
+      <div class="sum"><span>Na osobu</span><span>1 385 €</span></div>
+    </div>
   </a>
+
+  </div>
 
   <div class="foot">
     Ceny za 8 dní po aktuálnych zľavách · zdroj: Boataround.com · zoznam sa denne mení<br>
@@ -118,5 +226,46 @@
     <b>Na osobu</b> = celkovo ÷ 4 · ~ = odhadované poplatky
   </div>
 </div>
+
+<script>
+(function(){
+  // chevron: rozbalenie poplatkov
+  document.querySelectorAll('.chev').forEach(function(ch){
+    ch.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      var fees = ch.closest('.card').querySelector('.fees');
+      var open = fees.classList.toggle('open');
+      ch.textContent = open ? '▴' : '▾';
+    });
+  });
+  // klik do rozbalenej tabuľky nemá otvoriť Boataround
+  document.querySelectorAll('.fees').forEach(function(f){
+    f.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); });
+  });
+
+  // triedenie
+  var list = document.getElementById('list');
+  var sel = document.getElementById('sort');
+  function sortCards(mode){
+    var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
+    cards.sort(function(a,b){
+      var pa=+a.dataset.price, pb=+b.dataset.price,
+          ppa=+a.dataset.pp, ppb=+b.dataset.pp,
+          ya=+a.dataset.year, yb=+b.dataset.year;
+      if (mode==='pp')   return (ppa-ppb) || (yb-ya);   // na osobu, pri zhode novšia hore
+      if (mode==='year') return (yb-ya) || (ppa-ppb);   // najnovšia hore, pri zhode lacnejšia na osobu
+      return pa-pb;                                     // cena prenájmu
+    });
+    cards.forEach(function(c){ list.appendChild(c); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('sortMode'); } catch(e){}
+  if (saved && ['price','pp','year'].indexOf(saved) !== -1) { sel.value = saved; sortCards(saved); }
+  sel.addEventListener('change', function(){
+    sortCards(sel.value);
+    try { localStorage.setItem('sortMode', sel.value); } catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
