@@ -18,49 +18,46 @@
   .filters { font-size:.75rem; opacity:.8; line-height:1.4; }
   .updated { font-size:.95rem; font-weight:600; margin-top:12px; background:rgba(255,255,255,.14); border-radius:10px; display:inline-block; padding:5px 16px; }
 
-  .sortbar { display:flex; align-items:center; gap:6px; margin-bottom:12px; font-size:.8rem; color:#5a6b78; }
-  .sortbar button { border:1px solid #cfdbe4; background:#fff; color:#5a6b78; font-size:.78rem; padding:4px 12px; border-radius:12px; cursor:pointer; }
-  .sortbar button.active { background:var(--blue); border-color:var(--blue); color:#fff; font-weight:600; }
+  .sortbar { display:flex; align-items:center; gap:6px; margin-bottom:12px; font-size:.8rem; color:#5a6b78; flex-wrap:wrap; }
+  .sortbar button { border:1px solid #c8d6e0; background:#fff; color:var(--blue); font-size:.8rem; font-weight:600; padding:4px 12px; border-radius:14px; cursor:pointer; }
+  .sortbar button.active { background:var(--blue); color:#fff; border-color:var(--blue); }
 
   .card { background:#fff; border-radius:12px; padding:14px 16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,.08); display:block; text-decoration:none; color:inherit; }
   .card:active { background:#eef5fb; }
-  .row1 { display:flex; justify-content:space-between; align-items:baseline; gap:8px; }
+  .card.sold { opacity:.62; background:#f5f2f0; }
+  .card.sold .name { color:#6b7a86; text-decoration:line-through; }
+  .row1 { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+  .left { display:flex; flex-direction:column; gap:3px; min-width:0; }
   .name { font-weight:600; font-size:1rem; color:var(--blue); }
+  .marina { font-size:.83rem; color:#5a6b78; }
+  .pricebox { display:flex; flex-direction:column; align-items:flex-end; flex-shrink:0; }
+  .pricerow { display:flex; align-items:center; gap:4px; }
   .price { font-weight:700; font-size:1.05rem; white-space:nowrap; }
   .deal .price { color:var(--green); }
+  .chev { border:none; background:#eef2f5; color:var(--blue); width:22px; height:22px; border-radius:50%; font-size:.8rem; cursor:pointer; line-height:1; transition:transform .15s; }
+  .card.open .chev { transform:rotate(180deg); }
+  .total { font-size:.72rem; color:#5a6b78; text-align:right; margin-top:3px; line-height:1.45; }
+  .total b { color:#1a2a36; }
+
+  .fees { display:none; margin-top:10px; border-top:1px dashed #d5e0e8; padding-top:8px; cursor:default; }
+  .card.open .fees { display:block; }
+  .fl { display:flex; justify-content:space-between; font-size:.8rem; color:#5a6b78; padding:2px 0; }
+  .fl.sum { border-top:1px solid #e3ebf1; margin-top:4px; padding-top:6px; font-weight:700; color:#1a2a36; }
+
   .badge { display:inline-block; background:var(--green); color:#fff; font-size:.7rem; padding:1px 8px; border-radius:10px; margin-left:6px; vertical-align:middle; }
   .badge-new { background:#e07b00; }
   .year-new { color:#e07b00; font-weight:700; }
+  .year-mid { color:#0b5fa5; font-weight:600; }
   .trend { margin-top:8px; font-size:.75rem; display:flex; align-items:center; gap:6px; }
   .trend span { padding:2px 9px; border-radius:10px; font-weight:600; }
-  .t-down span { background:#e2f4ea; color:var(--green); }
-  .t-up span { background:#fbe9e4; color:var(--red); }
-  .t-flat span { background:#eef2f5; color:#5a6b78; font-weight:500; }
-  .t-new span { background:#e7f0fa; color:var(--blue); }
-  .t-sold span { background:#f3e2e2; color:#8a3b3b; }
-  .since { color:var(--gray); font-weight:400; }
+  .t-down span:first-child { background:#e2f4ea; color:var(--green); }
+  .t-up span:first-child { background:#fbe9e4; color:var(--red); }
+  .t-flat span:first-child { background:#eef2f5; color:#5a6b78; font-weight:500; }
+  .t-new span:first-child { background:#e7f0fa; color:var(--blue); }
+  .t-sold span:first-child { background:#f3e3df; color:var(--red); }
+  .since { color:var(--gray); font-weight:400; background:none !important; }
+  .year { margin-left:auto; color:#5a6b78; font-weight:500; background:none !important; padding:0 !important; }
 
-  .card.sold { opacity:.62; }
-  .card.sold .name { text-decoration:line-through; color:#5a6b78; }
-  .card.sold .price, .card.sold .total { color:var(--gray); }
-
-  .left { display:flex; flex-direction:column; min-width:0; }
-  .marina { font-size:.83rem; color:#5a6b78; margin-top:3px; font-weight:400; }
-  .pricebox { text-align:right; white-space:nowrap; flex-shrink:0; }
-  .pricebox .pricerow { display:flex; align-items:center; justify-content:flex-end; gap:6px; }
-  .pricebox .price { display:block; }
-  .pricebox .total { display:block; font-size:.72rem; color:#5a6b78; font-weight:400; margin-top:2px; line-height:1.4; }
-  .chev { border:1px solid #cfdbe4; background:#f2f6f9; color:#5a6b78; width:22px; height:22px; border-radius:50%; cursor:pointer; font-size:.7rem; line-height:1; flex-shrink:0; }
-  .card.open .chev { transform:rotate(180deg); background:var(--blue); color:#fff; border-color:var(--blue); }
-  .fees { display:none; margin-top:10px; border-top:1px dashed #dbe4ea; padding-top:8px; font-size:.78rem; color:#5a6b78; cursor:default; }
-  .card.open .fees { display:block; }
-  .fees .fl { display:flex; justify-content:space-between; padding:1.5px 0; }
-  .fees .fl.sum { border-top:1px solid #dbe4ea; margin-top:4px; padding-top:5px; font-weight:700; color:#1a2a36; }
-  .trend .year { margin-left:auto; background:none; padding:2px 0; font-weight:600; color:#1a2a36; }
-  .trend .year-mid { color:var(--blue); }
-  .trend .year-new { color:#e07b00; }
-
-  .calc { font-size:.75rem; color:var(--gray); margin-top:14px; text-align:left; line-height:1.6; background:#fff; border-radius:12px; padding:12px 16px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
   .foot { font-size:.75rem; color:var(--gray); margin-top:14px; text-align:center; line-height:1.5; }
 </style>
 </head>
@@ -71,15 +68,10 @@
     <h1>L.A. Yachts <span class="thin">Croatia 8/2026</span></h1>
     <div class="dates">1. — 8. august 2026 · Zadar → Trogir</div>
     <div class="filters">4 kabíny · GPS v kokpite · inverter · thruster · poistenie kaucie · iba voľné · do 3 000 €</div>
-    <div class="updated">🔄 aktualizované 21. 07. 2026 · 14:19</div>
+    <div class="updated">🔄 aktualizované 21. 7. 2026 · 21:31</div>
   </header>
 
-  <div class="sortbar">Zoradiť:
-    <button class="active" data-key="price" onclick="sortCards(this)">Cena</button>
-    <button data-key="total" onclick="sortCards(this)">Celkovo</button>
-    <button data-key="per" onclick="sortCards(this)">Na osobu</button>
-    <button data-key="year" onclick="sortCards(this)">Rok</button>
-  </div>
+  <div class="sortbar"><span>Zoradiť:</span><button class="active" onclick="sortCards('price',this)">Cena</button><button onclick="sortCards('total',this)">Celkovo</button><button onclick="sortCards('per',this)">Na osobu</button><button onclick="sortCards('year',this)">Rok</button></div>
 
   <div id="list">
 
@@ -123,26 +115,42 @@
   </a>
 
   <a class="card sold" data-price="2172" data-total="4639" data-year="2016" data-per="1160" href="https://www.boataround.com/boat/bavaria-cruiser-46-lula?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Bavaria Cruiser 46 — Lula</span><span class="marina">Primošten, Marina Kremik</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 172 €</span></span><span class="total">celkovo ~4 639 €<br>na osobu <b>~1 160 €</b></span></span></div>
+    <div class="row1"><span class="left"><span class="name">Bavaria Cruiser 46 — Lula</span><span class="marina">Primošten, Marina Kremik</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 172 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo ~4 639 €<br>na osobu <b>~1 160 €</b></span></span></div>
+    <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 172 €</span></div>
+      <div class="fl"><span>poistenie kaucie</span><span>~175 €</span></div>
+      <div class="fl"><span>transit log</span><span>~250 €</span></div>
+      <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>~41,60 €</span></div>
+      <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
+      <div class="fl sum"><span>celkovo</span><span>~4 639 € · ~1 160 €/os.</span></div>
+    </div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2016</span></div>
   </a>
 
   <a class="card sold" data-price="2450" data-total="4917" data-year="2016" data-per="1229" href="https://www.boataround.com/boat/beneteau-oceanis-45-theia?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 45 — Theia</span><span class="marina">Šibenik, D-Marin Mandalina</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 450 €</span></span><span class="total">celkovo ~4 917 €<br>na osobu <b>~1 229 €</b></span></span></div>
+    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 45 — Theia</span><span class="marina">Šibenik, D-Marin Mandalina</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 450 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo ~4 917 €<br>na osobu <b>~1 229 €</b></span></span></div>
+    <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 450 €</span></div>
+      <div class="fl"><span>poistenie kaucie</span><span>~175 €</span></div>
+      <div class="fl"><span>transit log</span><span>~250 €</span></div>
+      <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>~41,60 €</span></div>
+      <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
+      <div class="fl sum"><span>celkovo</span><span>~4 917 € · ~1 229 €/os.</span></div>
+    </div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2016</span></div>
   </a>
 
-  <a class="card" data-price="2513" data-total="4993" data-year="2001" data-per="1248" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis Clipper 411 — M&amp;M</span><span class="marina">Split, Pier Mimice</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 513 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 993 €<br>na osobu <b>1 248 €</b></span></span></div>
+  <a class="card" data-price="2512" data-total="4992" data-year="2001" data-per="1248" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
+    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis Clipper 411 — M&amp;M</span><span class="marina">Split, Pier Mimice</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 512 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 992 €<br>na osobu <b>1 248 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
-      <div class="fl"><span>prenájom (8 dní)</span><span>2 513 €</span></div>
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 512 €</span></div>
       <div class="fl"><span>poistenie kaucie</span><span>135 €</span></div>
       <div class="fl"><span>transit log</span><span>300 €</span></div>
       <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>44,80 €</span></div>
       <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
-      <div class="fl sum"><span>celkovo</span><span>4 993 € · 1 248 €/os.</span></div>
+      <div class="fl sum"><span>celkovo</span><span>4 992 € · 1 248 €/os.</span></div>
     </div>
-    <div class="trend t-up"><span>▲ +1 €</span><span class="since">od 21. 7.</span><span class="year">rok 2001</span></div>
+    <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2001</span></div>
   </a>
 
   <a class="card" data-price="2635" data-total="5440" data-year="2022" data-per="1360" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-440-uccelli?checkIn=2026-08-01&checkOut=2026-08-08">
@@ -159,39 +167,50 @@
   </a>
 
   <a class="card sold" data-price="2749" data-total="5216" data-year="2022" data-per="1304" href="https://www.boataround.com/boat/beneteau-oceanis-401-enjoy?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 40.1 — Enjoy</span><span class="marina">Trogir, Marina Baotić</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 749 €</span></span><span class="total">celkovo ~5 216 €<br>na osobu <b>~1 304 €</b></span></span></div>
+    <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 40.1 — Enjoy</span><span class="marina">Trogir, Marina Baotić</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 749 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo ~5 216 €<br>na osobu <b>~1 304 €</b></span></span></div>
+    <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 749 €</span></div>
+      <div class="fl"><span>poistenie kaucie</span><span>~175 €</span></div>
+      <div class="fl"><span>transit log</span><span>~250 €</span></div>
+      <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>~41,60 €</span></div>
+      <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
+      <div class="fl sum"><span>celkovo</span><span>~5 216 € · ~1 304 €/os.</span></div>
+    </div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2022</span></div>
   </a>
 
-  <a class="card" data-price="2758" data-total="5418" data-year="2013" data-per="1354" href="https://www.boataround.com/boat/salona-44-calanthe?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Salona 44 — Calanthe</span><span class="marina">Kaštela, Marina Kaštela</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 758 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 5 418 €<br>na osobu <b>1 354 €</b></span></span></div>
+  <a class="card" data-price="2814" data-total="5474" data-year="2013" data-per="1368" href="https://www.boataround.com/boat/salona-44-calanthe?checkIn=2026-08-01&checkOut=2026-08-08">
+    <div class="row1"><span class="left"><span class="name">Salona 44 — Calanthe</span><span class="marina">Kaštela, Marina Kaštela</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 814 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 5 474 €<br>na osobu <b>1 368 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
-      <div class="fl"><span>prenájom (8 dní)</span><span>2 758 €</span></div>
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 814 €</span></div>
       <div class="fl"><span>poistenie kaucie</span><span>175 €</span></div>
       <div class="fl"><span>transit log</span><span>440 €</span></div>
       <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>44,80 €</span></div>
       <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
-      <div class="fl sum"><span>celkovo</span><span>5 418 € · 1 354 €/os.</span></div>
+      <div class="fl sum"><span>celkovo</span><span>5 474 € · 1 368 €/os.</span></div>
     </div>
     <div class="trend t-new"><span>🆕 nová v zozname</span><span class="since">od 21. 7.</span><span class="year">rok 2013</span></div>
   </a>
 
   <a class="card sold" data-price="2837" data-total="5304" data-year="2024" data-per="1326" href="https://www.boataround.com/boat/elan-45-impression-aurora?checkIn=2026-08-01&checkOut=2026-08-08">
-    <div class="row1"><span class="left"><span class="name">Elan 45 Impression — Aurora<span class="badge badge-new">rok 2024</span></span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 837 €</span></span><span class="total">celkovo ~5 304 €<br>na osobu <b>~1 326 €</b></span></span></div>
+    <div class="row1"><span class="left"><span class="name">Elan 45 Impression — Aurora<span class="badge badge-new">rok 2024</span></span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 837 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo ~5 304 €<br>na osobu <b>~1 326 €</b></span></span></div>
+    <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
+      <div class="fl"><span>prenájom (8 dní)</span><span>2 837 €</span></div>
+      <div class="fl"><span>poistenie kaucie</span><span>~175 €</span></div>
+      <div class="fl"><span>transit log</span><span>~250 €</span></div>
+      <div class="fl"><span>turistická taxa (4 os. × 8 dní)</span><span>~41,60 €</span></div>
+      <div class="fl"><span>strava a doprava (4 × 500 €)</span><span>2 000 €</span></div>
+      <div class="fl sum"><span>celkovo</span><span>~5 304 € · ~1 326 €/os.</span></div>
+    </div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-new">rok 2024</span></div>
   </a>
 
   </div>
 
-  <div class="calc">
-    <b>Celkovo</b> = prenájom + poistenie kaucie + transit log (záverečné upratovanie) + turistická taxa × 4 osoby × 8 dní + predpokladané náklady na stravu a dopravu 500 €/osobu<br>
-    <b>Na osobu</b> = celkovo ÷ 4
-  </div>
-
   <div class="foot">
     Ceny za 8 dní po aktuálnych zľavách · zdroj: Boataround.com · zoznam sa denne mení<br>
-    zmena ceny: <b style="color:var(--green)">▼ zlacnela</b> · <b style="color:var(--red)">▲ zdražela</b> · — bez zmeny · 🆕 nová v zozname · <s>prečiarknutá</s> = už obsadená · <b style="color:#e07b00">oranžová = ročník 2023+</b><br>
-    ▾ pri cene rozbalí rozpis poplatkov · ~ = posledná známa cena pred obsadením
+    zmena ceny: <b style="color:var(--green)">▼ zlacnela</b> · <b style="color:var(--red)">▲ zdražela</b> · — bez zmeny · 🆕 nová v zozname · ⛔ obsadená · <b style="color:#e07b00">oranžová = ročník 2023+</b><br>
+    celkovo = prenájom + poistenie kaucie (lacnejšia varianta) + transit log + turistická taxa (4 os. × 8 dní) + strava a doprava 2 000 € · na osobu = celkovo ÷ 4 · ~ = odhad
   </div>
 </div>
 <script>
@@ -199,14 +218,14 @@ function toggleFees(e){
   e.preventDefault(); e.stopPropagation();
   e.target.closest('.card').classList.toggle('open');
 }
-function sortCards(btn){
-  document.querySelectorAll('.sortbar button').forEach(b=>b.classList.remove('active'));
+function sortCards(key, btn){
+  var list = document.getElementById('list');
+  var cards = Array.prototype.slice.call(list.querySelectorAll('.card'));
+  cards.sort(function(a,b){ return (+a.dataset[key]) - (+b.dataset[key]); });
+  if(key === 'year') cards.reverse();
+  cards.forEach(function(c){ list.appendChild(c); });
+  document.querySelectorAll('.sortbar button').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  const key = btn.dataset.key;
-  const list = document.getElementById('list');
-  [...list.querySelectorAll('.card')]
-    .sort((a,b)=>(+a.dataset[key])-(+b.dataset[key]))
-    .forEach(c=>list.appendChild(c));
 }
 </script>
 </body>
