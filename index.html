@@ -77,12 +77,13 @@
   <div class="sortbar">Zoradiť:
     <button class="active" data-key="price" onclick="sortCards(this)">Cena</button>
     <button data-key="total" onclick="sortCards(this)">Celkovo</button>
+    <button data-key="per" onclick="sortCards(this)">Na osobu</button>
     <button data-key="year" onclick="sortCards(this)">Rok</button>
   </div>
 
   <div id="list">
 
-  <a class="card deal" data-price="1768" data-total="4235" data-year="2009" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-44i-gea?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card deal" data-price="1768" data-total="4235" data-year="2009" data-per="1059" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-44i-gea?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Jeanneau Sun Odyssey 44i — Gea<span class="badge">pod 2000 €</span></span><span class="marina">Sukošan, D-Marin Dalmacija</span></span><span class="pricebox"><span class="pricerow"><span class="price">1 768 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 235 €<br>na osobu <b>1 059 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>1 768 €</span></div>
@@ -95,7 +96,7 @@
     <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span></div>
   </a>
 
-  <a class="card deal" data-price="1848" data-total="4373" data-year="2009" href="https://www.boataround.com/boat/elan-434-impression-jordan?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card deal" data-price="1848" data-total="4373" data-year="2009" data-per="1093" href="https://www.boataround.com/boat/elan-434-impression-jordan?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 434 Impression — Jordan<span class="badge">pod 2000 €</span></span><span class="marina">Biograd na Moru, Marina Kornati</span></span><span class="pricebox"><span class="pricerow"><span class="price">1 848 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 373 €<br>na osobu <b>1 093 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>1 848 €</span></div>
@@ -108,7 +109,7 @@
     <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2009</span></div>
   </a>
 
-  <a class="card" data-price="2000" data-total="4530" data-year="2012" href="https://www.boataround.com/boat/elan-444-karlo-veliki-1?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2000" data-total="4530" data-year="2012" data-per="1132" href="https://www.boataround.com/boat/elan-444-karlo-veliki-1?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 444 — Karlo Veliki</span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 000 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 530 €<br>na osobu <b>1 132 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>2 000 €</span></div>
@@ -121,17 +122,17 @@
     <div class="trend t-flat"><span>— bez zmeny</span><span class="since">od 17. 7.</span><span class="year">rok 2012</span></div>
   </a>
 
-  <a class="card sold" data-price="2172" data-total="4639" data-year="2016" href="https://www.boataround.com/boat/bavaria-cruiser-46-lula?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card sold" data-price="2172" data-total="4639" data-year="2016" data-per="1160" href="https://www.boataround.com/boat/bavaria-cruiser-46-lula?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Bavaria Cruiser 46 — Lula</span><span class="marina">Primošten, Marina Kremik</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 172 €</span></span><span class="total">celkovo ~4 639 €<br>na osobu <b>~1 160 €</b></span></span></div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2016</span></div>
   </a>
 
-  <a class="card sold" data-price="2450" data-total="4917" data-year="2016" href="https://www.boataround.com/boat/beneteau-oceanis-45-theia?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card sold" data-price="2450" data-total="4917" data-year="2016" data-per="1229" href="https://www.boataround.com/boat/beneteau-oceanis-45-theia?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 45 — Theia</span><span class="marina">Šibenik, D-Marin Mandalina</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 450 €</span></span><span class="total">celkovo ~4 917 €<br>na osobu <b>~1 229 €</b></span></span></div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2016</span></div>
   </a>
 
-  <a class="card" data-price="2513" data-total="4993" data-year="2001" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2513" data-total="4993" data-year="2001" data-per="1248" href="https://www.boataround.com/boat/beneteau-oceanis-clipper-411-m-m?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis Clipper 411 — M&amp;M</span><span class="marina">Split, Pier Mimice</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 513 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 4 993 €<br>na osobu <b>1 248 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>2 513 €</span></div>
@@ -144,7 +145,7 @@
     <div class="trend t-up"><span>▲ +1 €</span><span class="since">od 21. 7.</span><span class="year">rok 2001</span></div>
   </a>
 
-  <a class="card" data-price="2635" data-total="5440" data-year="2022" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-440-uccelli?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2635" data-total="5440" data-year="2022" data-per="1360" href="https://www.boataround.com/boat/jeanneau-sun-odyssey-440-uccelli?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Jeanneau Sun Odyssey 440 — Uccelli</span><span class="marina">Trogir, ACI Marina Trogir</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 635 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 5 440 €<br>na osobu <b>1 360 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>2 635 €</span></div>
@@ -157,12 +158,12 @@
     <div class="trend t-down"><span>▼ −203 €</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2022</span></div>
   </a>
 
-  <a class="card sold" data-price="2749" data-total="5216" data-year="2022" href="https://www.boataround.com/boat/beneteau-oceanis-401-enjoy?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card sold" data-price="2749" data-total="5216" data-year="2022" data-per="1304" href="https://www.boataround.com/boat/beneteau-oceanis-401-enjoy?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Beneteau Oceanis 40.1 — Enjoy</span><span class="marina">Trogir, Marina Baotić</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 749 €</span></span><span class="total">celkovo ~5 216 €<br>na osobu <b>~1 304 €</b></span></span></div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-mid">rok 2022</span></div>
   </a>
 
-  <a class="card" data-price="2758" data-total="5418" data-year="2013" href="https://www.boataround.com/boat/salona-44-calanthe?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card" data-price="2758" data-total="5418" data-year="2013" data-per="1354" href="https://www.boataround.com/boat/salona-44-calanthe?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Salona 44 — Calanthe</span><span class="marina">Kaštela, Marina Kaštela</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 758 €</span><button class="chev" onclick="toggleFees(event)" aria-label="rozpis poplatkov">▾</button></span><span class="total">celkovo 5 418 €<br>na osobu <b>1 354 €</b></span></span></div>
     <div class="fees" onclick="event.preventDefault();event.stopPropagation();">
       <div class="fl"><span>prenájom (8 dní)</span><span>2 758 €</span></div>
@@ -175,7 +176,7 @@
     <div class="trend t-new"><span>🆕 nová v zozname</span><span class="since">od 21. 7.</span><span class="year">rok 2013</span></div>
   </a>
 
-  <a class="card sold" data-price="2837" data-total="5304" data-year="2024" href="https://www.boataround.com/boat/elan-45-impression-aurora?checkIn=2026-08-01&checkOut=2026-08-08">
+  <a class="card sold" data-price="2837" data-total="5304" data-year="2024" data-per="1326" href="https://www.boataround.com/boat/elan-45-impression-aurora?checkIn=2026-08-01&checkOut=2026-08-08">
     <div class="row1"><span class="left"><span class="name">Elan 45 Impression — Aurora<span class="badge badge-new">rok 2024</span></span><span class="marina">Pirovac, Marina Pirovac</span></span><span class="pricebox"><span class="pricerow"><span class="price">2 837 €</span></span><span class="total">celkovo ~5 304 €<br>na osobu <b>~1 326 €</b></span></span></div>
     <div class="trend t-sold"><span>⛔ obsadená</span><span class="since">od 21. 7.</span><span class="year year-new">rok 2024</span></div>
   </a>
